@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Haven - Categories</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            overflow-x: hidden;
+            color: #333;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            background-color: #2c3e50;
+            padding-top: 60px;
+            transition: 0.5s ease;
+            z-index: 1000;
+            overflow-y: auto;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar a {
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 1.2em;
+            color: #ecf0f1;
+            display: block;
+            transition: 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: #34495e;
+            padding-left: 35px;
+            border-left: 5px solid #e74c3c;
+        }
+
+        .open-sidebar-btn {
+            font-size: 1.5em;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .open-sidebar-btn:hover {
+            background-color: #c0392b;
+        }
+
+        .main-content {
+            margin-left: 50px;
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: margin-left 0.5s ease;
+        }
+
+        .main-content h1 {
+            font-size: 3em;
+            color: #34495e;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .category-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            max-width: 800px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .category-list li {
+            background-color: #34495e;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .category-list li a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-size: 1.2em;
+            display: block;
+        }
+
+        .category-list li:hover {
+            background-color: #2c3e50;
+            transform: translateY(-5px);
+        }
+
+        .category-list li:hover a {
+            color: #e74c3c;
+        }
+
+        @media screen and (max-width: 768px) {
+            .main-content {
+                margin-left: 0;
+            }
+
+            .open-sidebar-btn {
+                top: 10px;
+                left: 10px;
+                padding: 5px 10px;
+            }
+        }
+    </style>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            const mainContent = document.getElementById("main-content");
+            if (sidebar.style.left === "0px") {
+                sidebar.style.left = "-250px";
+                mainContent.style.marginLeft = "50px";
+            } else {
+                sidebar.style.left = "0px";
+                mainContent.style.marginLeft = "300px";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <a href="#home">Home</a>
+        <a href="#new-arrivals">New Arrivals</a>
+        <a href="#trending">Trending</a>
+        <a href="#casual-wear">Casual Wear</a>
+        <a href="#formal-wear">Formal Wear</a>
+        <a href="#party-wear">Party Wear</a>
+        <a href="#traditional-wear">Traditional Wear</a>
+        <a href="#sports-wear">Sports Wear</a>
+        <a href="#footwear">Footwear</a>
+        <a href="#accessories">Accessories</a>
+        <a href="#kids-wear">Kids' Wear</a>
+        <a href="#plus-size">Plus Size</a>
+        <a href="#beauty">Beauty Products</a>
+        <a href="#home-decor">Home Decor</a>
+    </div>
+
+    <!-- Button to open sidebar -->
+    <button class="open-sidebar-btn" onclick="toggleSidebar()">&#9776; Categories</button>
+
+    <!-- Main Content -->
+    <div id="main-content" class="main-content">
+        <h1>Fashion Categories</h1>
+        <ul class="category-list">
+            <li><a href="#casual-wear">Casual Wear</a></li>
+            <li><a href="#formal-wear">Formal Wear</a></li>
+            <li><a href="#party-wear">Party Wear</a></li>
+            <li><a href="#traditional-wear">Traditional Wear</a></li>
+            <li><a href="#sports-wear">Sports Wear</a></li>
+            <li><a href="#footwear">Footwear</a></li>
+            <li><a href="#accessories">Accessories</a></li>
+            <li><a href="#kids-wear">Kids' Wear</a></li>
+            <li><a href="#plus-size">Plus Size</a></li>
+            <li><a href="#beauty">Beauty Products</a></li>
+            <li><a href="#home-decor">Home Decor</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>
